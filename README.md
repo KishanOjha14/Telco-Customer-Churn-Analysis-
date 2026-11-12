@@ -1,69 +1,142 @@
-# Telco Customer Churn Analysis by Kishan Kumar Ojha
+# Telco Customer Churn Analysis
 
+By **Kishan Kumar Ojha**
 
-### Project Overview
-This project explores and analyzes the Telco Customer Churn dataset from Kaggle to understand churn behavior and build a model to predict customer retention. It involves data cleaning, interactive dashboarding, and machine learning classification using the Random Forest algorithm.
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-Data%20Cleaning-blue.svg)
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow.svg)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-Random%20Forest-orange.svg)
 
-### Tools & Technologies
-<br> **SQL Server:** Data cleaning and preprocessing
-<br> **Power BI:** Interactive dashboards and visualizations
-<br> **Python (Jupyter Notebook):** Machine learning (Random Forest), feature analysis, and evaluation
-<br> **Libraries:** pandas, matplotlib, seaborn, scikit-learn
+---
 
-### Dataset
-The dataset [https://www.kaggle.com/datasets/blastchar/telco-customer-churn] contains detailed information about customers, their services, account details, and churn status. 
-<br>
-Telco Customer Churn dataset from Kaggle and cleaned it using SQL—this included handling missing values and converting the TotalCharges column from string to float. Also mapped the Churn column to binary values (Yes = 1, No = 0). The cleaned dataset was then imported into Power BI, where I created an interactive dashboard to visualize churn patterns, tenure, contract types, Internet service types, and Lifetime Value (LTV). After exploring insights in Power BI, I brought the cleaned data into Jupyter Notebook to build a Random Forest classification model. I split the data into an 80:20 train-test ratio and trained the model using 100 estimators with a random state of 42. Finally, I evaluated the model’s performance using precision, recall, F1-score, and accuracy metrics.
-<br>
-<br>
-#### Model Evaluation - 
-| Metric    | Class 0 (Retained) | Class 1 (Churned) |
-| --------- | ------------------ | ----------------- |
-| Precision | 83%                | 67%               |
-| Recall    | 92%                | 46%               |
-| F1-Score  | 87%                | 55%               |
+## 📋 Project Overview
 
-Overall Accuracy: 80%
-<br>
-### Key Insights from Research Questions - 
-<br> 1. Churned customers stay for an average of 18 months, while retained customers stay around 38 months — indicating longer-tenured customers are less likely to churn.
-<br> 2. Fiber optic users show the highest churn rate (~42%), while DSL users churn moderately (~20%) and customers without internet service churn the least (~6%).
-<br> 3. Month-to-month contract users churn the most (~45%), whereas one-year (~12%) and two-year (~2%) contract users are more loyal — proving long-term contracts reduce churn.
-<br> 4. Retained customers have significantly higher LTV than churned ones, indicating that churned users generate less revenue over time.
-<br> 5. Internet Service and Contract Type had the strongest influence on LTV, while Gender had negligible impact.
-<br>
-### Business Insights & Recommendations
-Based on the analysis of churn behavior, tenure, contract types, and LTV, here are key insights and actions the business can take to reduce customer churn:
+This project explores and analyzes the **Telco Customer Churn dataset** from Kaggle to understand churn behavior and build a machine learning model to predict customer retention. The workflow includes data cleaning, interactive dashboarding, and classification modeling using the **Random Forest** algorithm.
 
-#### 1. Encourage Long-Term Contracts
+### 🔑 Objectives
+- Clean and preprocess the Telco customer dataset using SQL Server.
+- Visualize churn patterns via an interactive Power BI dashboard.
+- Train a Random Forest classifier to predict customer churn.
+- Evaluate model performance and surface actionable business insights.
 
-* **Insight**: Customers on month-to-month plans have the highest churn (\~45%), while two-year contracts have the lowest (\~2%).
-* **Recommendation**: Offer loyalty rewards, discounts, or perks to encourage longer contract commitments.
+---
 
-#### 2. Improve Experience for Fiber Optic Users
+## 🛠️ Tools & Technologies
 
-* **Insight**: Fiber optic users show the highest churn (\~42%) among all internet service types.
-* **Recommendation**: Investigate pricing or service quality concerns and offer customized plans or customer support.
+| Tool | Purpose |
+|------|---------|
+| **SQL Server** | Data cleaning and preprocessing |
+| **Power BI** | Interactive dashboards and visualizations |
+| **Python (Jupyter Notebook)** | Machine learning (Random Forest), feature analysis, evaluation |
+| **Libraries** | pandas, matplotlib, seaborn, scikit-learn |
 
-#### 3. Strengthen Early Customer Engagement
+---
 
-* **Insight**: Churned customers typically leave within the first 18 months.
-* **Recommendation**: Focus on onboarding, regular engagement, and first-year incentives to retain new customers.
+## 📊 Dataset
 
-#### 4. Boost Lifetime Value Through Segmentation
+The dataset is sourced from Kaggle:  
+🔗 [Telco Customer Churn – Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
-* **Insight**: Contract type and Internet Service significantly affect LTV, while features like gender have little impact.
-* **Recommendation**: Use segmentation and upselling strategies to improve LTV among low-value customers.
+It contains detailed information about customers, their services, account details, and churn status.
 
-#### 5. Offer Proactive Technical Support
+### Data Cleaning (SQL)
+- Handled missing values
+- Converted the `TotalCharges` column from string to float
+- Mapped the `Churn` column to binary values (`Yes = 1`, `No = 0`)
 
-* **Insight**: Better service support is linked to higher tenure and retention.
-* **Recommendation**: Introduce tech support plans and flag high-risk accounts for proactive outreach.
+The cleaned dataset was imported into Power BI for dashboarding, then into Jupyter Notebook for modeling.
 
-#### 6. Leverage Machine Learning for Early Churn Prediction
+---
 
-* **Insight**: The Random Forest model predicts churn with 80% accuracy.
-* **Recommendation**: Use the model to trigger retention campaigns before customers decide to leave.
+## ⚙️ Model Configuration
 
+- **Algorithm:** Random Forest Classifier
+- **Train-Test Split:** 80:20
+- **Estimators:** 100
+- **Random State:** 42
 
+### Model Evaluation
 
+| Metric | Class 0 (Retained) | Class 1 (Churned) |
+|--------|--------------------|-------------------|
+| Precision | 83% | 67% |
+| Recall | 92% | 46% |
+| F1-Score | 87% | 55% |
+
+**Overall Accuracy: 80%**
+
+---
+
+## 🔍 Key Insights from Research Questions
+
+1. **Tenure:** Churned customers stay for an average of **18 months**, while retained customers stay around **38 months** — longer-tenured customers are less likely to churn.
+2. **Internet Service:** Fiber optic users show the highest churn rate (~42%), DSL users churn moderately (~20%), and customers without internet service churn the least (~6%).
+3. **Contract Type:** Month-to-month contract users churn the most (~45%), whereas one-year (~12%) and two-year (~2%) contract users are more loyal — long-term contracts reduce churn.
+4. **Lifetime Value (LTV):** Retained customers have significantly higher LTV than churned ones — churned users generate less revenue over time.
+5. **Feature Influence:** Internet Service and Contract Type had the strongest influence on LTV, while Gender had negligible impact.
+
+---
+
+## 💼 Business Insights & Recommendations
+
+| # | Insight | Recommendation |
+|---|---------|----------------|
+| 1 | Month-to-month plans have the highest churn (~45%); two-year contracts have the lowest (~2%). | Offer loyalty rewards, discounts, or perks to encourage longer contract commitments. |
+| 2 | Fiber optic users show the highest churn (~42%) among all internet service types. | Investigate pricing or service quality concerns; offer customized plans or support. |
+| 3 | Churned customers typically leave within the first 18 months. | Focus on onboarding, regular engagement, and first-year incentives. |
+| 4 | Contract type and Internet Service significantly affect LTV; gender has little impact. | Use segmentation and upselling strategies to improve LTV among low-value customers. |
+| 5 | Better service support is linked to higher tenure and retention. | Introduce tech support plans and flag high-risk accounts for proactive outreach. |
+| 6 | The Random Forest model predicts churn with 80% accuracy. | Use the model to trigger retention campaigns before customers decide to leave. |
+
+---
+
+## 📁 Repository Structure
+
+```
+Customer-Churn-Analysis-main/
+├── README.md
+├── Telco-Customer-Churn.csv          # Raw dataset from Kaggle
+├── Customer-Churn_Telco_Clean.csv    # Cleaned dataset (SQL)
+├── Customer_Churn-prediction-analysis.ipynb      # ML analysis notebook
+├── Customer_Churn-prediction-analysis-executed.ipynb  # Executed notebook
+└── Customer_Churn-prediction-analysis-executed.html   # Exported HTML report
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.x
+- Jupyter Notebook / JupyterLab
+- SQL Server
+- Power BI Desktop
+
+### Python Libraries
+```bash
+pip install pandas matplotlib seaborn scikit-learn
+```
+
+### Usage
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/KishanOjha14/Telco-Customer-Churn-Analysis-.git
+   cd Telco-Customer-Churn-Analysis-
+   ```
+2. Open `Customer_Churn-prediction-analysis.ipynb` in Jupyter Notebook to reproduce the machine learning analysis.
+3. Load `Customer-Churn_Telco_Clean.csv` into Power BI to explore the interactive dashboard.
+4. Review `README.md` for key findings and business recommendations.
+
+---
+
+## 📄 License
+
+This project is for educational and analytical purposes.
+
+---
+
+## 🙋‍♂️ Author
+
+**Kishan Kumar Ojha**  
+Email: kishanojha47@gmail.com  
+GitHub: [KishanOjha14](https://github.com/KishanOjha14)
